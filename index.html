@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Memo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/styles/github-dark.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>Markdown Memo</h1>
+      <div class="actions">
+        <button id="clearBtn" type="button">クリア</button>
+        <button id="downloadBtn" type="button">.mdで保存</button>
+      </div>
+    </header>
+
+    <section class="editor-wrap">
+      <label class="panel">
+        <span class="panel-title">編集</span>
+        <div class="toolbar" id="toolbar">
+          <button type="button" data-action="bold"><strong>B</strong></button>
+          <button type="button" data-action="italic"><em>I</em></button>
+          <button type="button" data-action="strike"><s>S</s></button>
+          <button type="button" data-action="inlineCode">`code`</button>
+          <button type="button" data-action="codeBlock">```</button>
+          <button type="button" data-action="ulDash">- list</button>
+          <button type="button" data-action="ulStar">* list</button>
+          <button type="button" data-action="quote">&gt; quote</button>
+        </div>
+        <textarea id="editor" placeholder="# メモを書こう&#10;&#10;- 箇条書き&#10;- **太字**&#10;- [リンク](https://example.com)"></textarea>
+        <p class="shortcut-note">
+          Ctrl/Cmd+B: 太字 | Ctrl/Cmd+I: 斜体 | Ctrl/Cmd+Shift+C: コードブロック | Enter: リスト自動継続
+        </p>
+      </label>
+
+      <section class="panel">
+        <span class="panel-title">プレビュー</span>
+        <article id="preview" class="preview"></article>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/lib/common.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
